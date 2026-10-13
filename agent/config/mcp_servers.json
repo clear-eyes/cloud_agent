@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "cloud_billing": {
+      "command": "python",
+      "args": ["-m", "mcp_servers.cloud_platform_server"],
+      "cwd": "..",
+      "transport": "stdio"
+    }
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "nodes": [
+    {
+      "id": "包年包月",
+      "label": "BillingRule",
+      "properties": [
+        {
+          "key": "mode",
+          "value": "Subscription"
+        },
+        {
+          "key": "payment_type",
+          "value": "Prepaid"
+        },
+        {
+          "key": "discounts",
+          "value": "Buy 1 year: 15% off; Buy 3 years: 50% off"
+        }
+      ]
+    },
+    {
+      "id": "按量付费",
+      "label": "BillingRule",
+      "properties": [
+        {
+          "key": "mode",
+          "value": "Pay-As-You-Go"
+        },
+        {
+          "key": "payment_type",
+          "value": "Postpaid"
+        },
+        {
+          "key": "billing_granularity",
+          "value": "per second"
+        },
+        {
+          "key": "billing_cycle",
+          "value": "hourly settlement at top of hour"
+        }
+      ]
+    },
+    {
+      "id": "抢占式实例",
+      "label": "BillingRule",
+      "properties": [
+        {
+          "key": "mode",
+          "value": "Spot Instance"
+        },
+        {
+          "key": "price_saving_max",
+          "value": "90%"
+        },
+        {
+          "key": "market_driven",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": "停机不收费",
+      "label": "Feature",
+      "properties": [
+        {
+          "key": "applies_to",
+          "value": "vCPU, memory"
+        },
+        {
+          "key": "excludes",
+          "value": "local disk instances (i4, gn7i), ESSD, EIP"
+        }
+      ]
+    },
+    {
+      "id": "i4系列",
+      "label": "InstanceType",
+      "properties": [
+        {
+          "key": "storage_type",
+          "value": "NVMe SSD (local)"
+        }
+      ]
+    },
+    {
+      "id": "gn7i",
+      "label": "InstanceType",
+      "properties": [
+        {
+          "key": "instance_family",
+          "value": "GPU"
+        },
+        {
+          "key": "storage_type",
+          "value": "NVMe SSD (local)"
+        }
+      ]
+    },
+    {
+      "id": "EIP",
+      "label": "Product",
+      "properties": [
+        {
+          "key": "full_name",
+          "value": "Elastic IP Address"
+        }
+      ]
+    },
+    {
+      "id": "按固定带宽计费",
+      "label": "BillingRule",
+      "properties": [
+        {
+          "key": "mode",
+          "value": "PayByBandwidth"
+        },
+        {
+          "key": "billed_by",
+          "value": "bandwidth peak"
+        }
+      ]
+    },
+    {
+      "id": "按使用流量计费",
+      "label": "BillingRule",
+      "properties": [
+        {
+          "key": "mode",
+          "value": "PayByTraffic"
+        },
+        {
+          "key": "billed_by",
+          "value": "outbound traffic in GB"
+        },
+        {
+          "key": "inbound_free",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": "五天无理由退款",
+      "label": "RefundPolicy",
+      "properties": [
+        {
+          "key": "applicable_to",
+          "value": "new Subscription orders"
+        },
+        {
+          "key": "time_limit",
+          "value": "5 days after purchase"
+        },
+        {
+          "key": "conditions",
+          "value": "no downgrade, no renewal"
+        }
+      ]
+    },
+    {
+      "id": "非全额退订",
+      "label": "RefundPolicy",
+      "properties": [
+        {
+          "key": "formula",
+          "value": "Refund = PaidAmount - (UsedDays × PayAsYouGoUnitPrice) - (PaidAmount × 15%)"
+        },
+        {
+          "key": "minimum_refund",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "欠费与自动释放",
+      "label": "LifecyclePolicy",
+      "properties": [
+        {
+          "key": "applies_to",
+          "value": "Pay-As-You-Go instances"
+        },
+        {
+          "key": "state_after_arrears",
+          "value": "Stopped (data retained for 15 days)"
+        },
+        {
+          "key": "final_action",
+          "value": "destroy instance and attached cloud disks"
+        }
+      ]
+    },
+    {
+      "id": "ecs.g8a.xlarge",
+      "label": "InstanceType",
+      "properties": [
+        {
+          "key": "family",
+          "value": "g8a"
+        },
+        {
+          "key": "size",
+          "value": "xlarge"
+        },
+        {
+          "key": "use_case",
+          "value": "enterprise web server"
+        }
+      ]
+    },
+    {
+      "id": "RDS",
+      "label": "Product",
+      "properties": [
+        {
+          "key": "full_name",
+          "value": "Relational Database Service"
+        },
+        {
+          "key": "use_case",
+          "value": "core database"
+        }
+      ]
+    },
+    {
+      "id": "Web服务",
+      "label": "UseCase",
+      "properties": []
+    },
+    {
+      "id": "离线数据分析",
+      "label": "UseCase",
+      "properties": []
+    },
+    {
+      "id": "批量计算",
+      "label": "UseCase",
+      "properties": []
+    },
+    {
+      "id": "保护期",
+      "label": "Feature",
+      "properties": [
+        {
+          "key": "duration",
+          "value": "1 hour"
+        }
+      ]
+    },
+    {
+      "id": "自动释放机制",
+      "label": "Feature",
+      "properties": [
+        {
+          "key": "notification_lead_time",
+          "value": "5 minutes"
+        },
+        {
+          "key": "trigger_conditions",
+          "value": "market price > bid OR inventory shortage"
+        }
+      ]
+    },
+    {
+      "id": "1小时",
+      "label": "Duration",
+      "properties": []
+    },
+    {
+      "id": "提前5分钟通知",
+      "label": "NotificationPolicy",
+      "properties": []
+    },
+    {
+      "id": "5 Mbps",
+      "label": "Bandwidth",
+      "properties": []
+    },
+    {
+      "id": "阶梯定价",
+      "label": "PricingModel",
+      "properties": []
+    },
+    {
+      "id": "1-5 Mbps单价较低",
+      "label": "TierRule",
+      "properties": []
+    },
+    {
+      "id": ">5 Mbps单价急剧上升",
+      "label": "TierRule",
+      "properties": []
+    },
+    {
+      "id": "出网流量",
+      "label": "TrafficDirection",
+      "properties": [
+        {
+          "key": "direction",
+          "value": "outbound"
+        }
+      ]
+    },
+    {
+      "id": "入网流量",
+      "label": "TrafficDirection",
+      "properties": [
+        {
+          "key": "direction",
+          "value": "inbound"
+        },
+        {
+          "key": "free",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": "5天内",
+      "label": "TimeWindow",
+      "properties": []
+    },
+    {
+      "id": "未降配",
+      "label": "Condition",
+      "properties": []
+    },
+    {
+      "id": "未续费",
+      "label": "Condition",
+      "properties": []
+    },
+    {
+      "id": "实名认证账号",
+      "label": "AccountType",
+      "properties": []
+    },
+    {
+      "id": "1次/自然年",
+      "label": "Quota",
+      "properties": []
+    },
+    {
+      "id": "10台实例/次",
+      "label": "Quota",
+      "properties": []
+    },
+    {
+      "id": "已使用天数 × 按量付费单价",
+      "label": "DeductionItem",
+      "properties": []
+    },
+    {
+      "id": "订单实付金额 × 15%",
+      "label": "DeductionItem",
+      "properties": []
+    },
+    {
+      "id": "退款金额 ≤ 0时不予退款",
+      "label": "PolicyRule",
+      "properties": []
+    },
+    {
+      "id": "按量付费实例",
+      "label": "Resource",
+      "properties": [
+        {
+          "key": "billing_mode",
+          "value": "Pay-As-You-Go"
+        }
+      ]
+    },
+    {
+      "id": "欠费停机",
+      "label": "InstanceState",
+      "properties": [
+        {
+          "key": "data_retention",
+          "value": "15 days"
+        }
+      ]
+    },
+    {
+      "id": "15天",
+      "label": "Duration",
+      "properties": []
+    },
+    {
+      "id": "彻底释放（销毁）",
+      "label": "LifecycleAction",
+      "properties": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "包年包月",
+      "type": "SUPPORTS",
+      "target": "ecs.g8a.xlarge"
+    },
+    {
+      "source": "五天无理由退款",
+      "type": "LIMITED_BY",
+      "target": "实名认证账号"
+    },
+    {
+      "source": "i4系列",
+      "type": "HAS_STORAGE",
+      "target": "本地盘"
+    },
+    {
+      "source": "包年包月",
+      "type": "ALLOWS_CONVERSION_TO",
+      "target": "按量付费"
+    },
+    {
+      "source": "按固定带宽计费",
+      "type": "BANDWIDTH_PEAK",
+      "target": "5 Mbps"
+    },
+    {
+      "source": "欠费停机",
+      "type": "LEADS_TO",
+      "target": "彻底释放（销毁）"
+    },
+    {
+      "source": "按固定带宽计费",
+      "type": "HAS_PRICING_MODEL",
+      "target": "阶梯定价"
+    },
+    {
+      "source": "自动释放机制",
+      "type": "NOTIFICATION_POLICY",
+      "target": "提前5分钟通知"
+    },
+    {
+      "source": "gn7i",
+      "type": "FORBIDS_FEATURE",
+      "target": "停机不收费"
+    },
+    {
+      "source": "非全额退订",
+      "type": "DEDUCTS",
+      "target": "订单实付金额 × 15%"
+    },
+    {
+      "source": "五天无理由退款",
+      "type": "APPLIES_TO",
+      "target": "包年包月"
+    },
+    {
+      "source": "实名认证账号",
+      "type": "QUOTA",
+      "target": "1次/自然年"
+    },
+    {
+      "source": "非全额退订",
+      "type": "POLICY_RULE",
+      "target": "退款金额 ≤ 0时不予退款"
+    },
+    {
+      "source": "i4系列",
+      "type": "FORBIDS_FEATURE",
+      "target": "停机不收费"
+    },
+    {
+      "source": "按量付费",
+      "type": "SUPPORTS_FEATURE",
+      "target": "停机不收费"
+    },
+    {
+      "source": "包年包月",
+      "type": "FORBIDS_CONVERSION_TO",
+      "target": "抢占式实例"
+    },
+    {
+      "source": "抢占式实例",
+      "type": "SUITABLE_FOR",
+      "target": "离线数据分析"
+    },
+    {
+      "source": "EIP",
+      "type": "SUPPORTED_BY",
+      "target": "按固定带宽计费"
+    },
+    {
+      "source": "按使用流量计费",
+      "type": "EXEMPTS_FROM_BILLING",
+      "target": "入网流量"
+    },
+    {
+      "source": "抢占式实例",
+      "type": "SUITABLE_FOR",
+      "target": "批量计算"
+    },
+    {
+      "source": "抢占式实例",
+      "type": "HAS_FEATURE",
+      "target": "保护期"
+    },
+    {
+      "source": "EIP",
+      "type": "SUPPORTED_BY",
+      "target": "按使用流量计费"
+    },
+    {
+      "source": "阶梯定价",
+      "type": "TIER_RULE",
+      "target": ">5 Mbps单价急剧上升"
+    },
+    {
+      "source": "五天无理由退款",
+      "type": "CONDITION",
+      "target": "未续费"
+    },
+    {
+      "source": "按使用流量计费",
+      "type": "BILLS_FOR",
+      "target": "出网流量"
+    },
+    {
+      "source": "抢占式实例",
+      "type": "SUITABLE_FOR",
+      "target": "Web服务"
+    },
+    {
+      "source": "欠费与自动释放",
+      "type": "TRIGGERS_STATE",
+      "target": "欠费停机"
+    },
+    {
+      "source": "停机不收费",
+      "type": "STOPS_BILLING_FOR",
+      "target": "内存"
+    },
+    {
+      "source": "五天无理由退款",
+      "type": "TIME_WINDOW",
+      "target": "5天内"
+    },
+    {
+      "source": "包年包月",
+      "type": "SUPPORTS",
+      "target": "RDS"
+    },
+    {
+      "source": "非全额退订",
+      "type": "APPLIES_TO",
+      "target": "包年包月"
+    },
+    {
+      "source": "阶梯定价",
+      "type": "TIER_RULE",
+      "target": "1-5 Mbps单价较低"
+    },
+    {
+      "source": "抢占式实例",
+      "type": "HAS_FEATURE",
+      "target": "自动释放机制"
+    },
+    {
+      "source": "五天无理由退款",
+      "type": "CONDITION",
+      "target": "未降配"
+    },
+    {
+      "source": "保护期",
+      "type": "DURATION",
+      "target": "1小时"
+    },
+    {
+      "source": "欠费停机",
+      "type": "DATA_RETENTION_PERIOD",
+      "target": "15天"
+    },
+    {
+      "source": "抢占式实例",
+      "type": "FORBIDS_CONVERSION_TO",
+      "target": "包年包月"
+    },
+    {
+      "source": "停机不收费",
+      "type": "STOPS_BILLING_FOR",
+      "target": "vCPU"
+    },
+    {
+      "source": "欠费与自动释放",
+      "type": "APPLIES_TO",
+      "target": "按量付费实例"
+    },
+    {
+      "source": "非全额退订",
+      "type": "DEDUCTS",
+      "target": "已使用天数 × 按量付费单价"
+    },
+    {
+      "source": "gn7i",
+      "type": "HAS_STORAGE",
+      "target": "本地盘"
+    },
+    {
+      "source": "实名认证账号",
+      "type": "QUOTA",
+      "target": "10台实例/次"
+    }
+  ]
+}

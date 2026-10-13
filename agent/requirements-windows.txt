@@ -1,0 +1,19 @@
+# Windows setup: install the original dependencies, then source-level extras.
+-r requirements.txt
+
+# FastAPI gateway
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+
+# LangChain integrations imported by the source code
+langchain-openai>=0.3.0
+langchain-milvus>=0.2.0
+langchain-neo4j>=0.4.0
+langchain-text-splitters>=0.3.0
+
+# Keep compatibility with the PyTorch build pulled by text-splitting extras.
+numpy<2
+
+# MCP business database and HTTP calls
+pymysql>=1.1.0
+requests>=2.32.0

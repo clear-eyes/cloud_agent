@@ -1,0 +1,410 @@
+{
+  "nodes": [
+    {
+      "id": "vpc-prod-beijing",
+      "label": "VPC",
+      "properties": [
+        {
+          "key": "name",
+          "value": "vpc-prod-beijing"
+        },
+        {
+          "key": "cidr_block",
+          "value": "10.0.0.0/8"
+        },
+        {
+          "key": "region",
+          "value": "cn-beijing"
+        }
+      ]
+    },
+    {
+      "id": "vpc-dev-beijing",
+      "label": "VPC",
+      "properties": [
+        {
+          "key": "name",
+          "value": "vpc-dev-beijing"
+        },
+        {
+          "key": "region",
+          "value": "cn-beijing"
+        }
+      ]
+    },
+    {
+      "id": "vsw-beijing-k",
+      "label": "VSwitch",
+      "properties": [
+        {
+          "key": "name",
+          "value": "vsw-beijing-k"
+        },
+        {
+          "key": "az",
+          "value": "cn-beijing-k"
+        }
+      ]
+    },
+    {
+      "id": "vsw-beijing-g",
+      "label": "VSwitch",
+      "properties": [
+        {
+          "key": "name",
+          "value": "vsw-beijing-g"
+        },
+        {
+          "key": "az",
+          "value": "cn-beijing-g"
+        }
+      ]
+    },
+    {
+      "id": "cn-beijing-k",
+      "label": "AvailabilityZone",
+      "properties": [
+        {
+          "key": "id",
+          "value": "cn-beijing-k"
+        }
+      ]
+    },
+    {
+      "id": "cn-beijing-g",
+      "label": "AvailabilityZone",
+      "properties": [
+        {
+          "key": "id",
+          "value": "cn-beijing-g"
+        }
+      ]
+    },
+    {
+      "id": "RDS",
+      "label": "Product",
+      "properties": [
+        {
+          "key": "type",
+          "value": "Relational Database Service"
+        }
+      ]
+    },
+    {
+      "id": "ecs.g8a.4xlarge",
+      "label": "InstanceType",
+      "properties": [
+        {
+          "key": "family",
+          "value": "g8a"
+        },
+        {
+          "key": "size",
+          "value": "4xlarge"
+        }
+      ]
+    },
+    {
+      "id": "gn7i",
+      "label": "InstanceType",
+      "properties": [
+        {
+          "key": "family",
+          "value": "gn7i"
+        }
+      ]
+    },
+    {
+      "id": "ecs.c7.large",
+      "label": "InstanceType",
+      "properties": [
+        {
+          "key": "family",
+          "value": "c7"
+        },
+        {
+          "key": "size",
+          "value": "large"
+        }
+      ]
+    },
+    {
+      "id": "ecs.g8a.xlarge",
+      "label": "InstanceType",
+      "properties": [
+        {
+          "key": "family",
+          "value": "g8a"
+        },
+        {
+          "key": "size",
+          "value": "xlarge"
+        }
+      ]
+    },
+    {
+      "id": "ecs.c7.8xlarge",
+      "label": "InstanceType",
+      "properties": [
+        {
+          "key": "family",
+          "value": "c7"
+        },
+        {
+          "key": "size",
+          "value": "8xlarge"
+        }
+      ]
+    },
+    {
+      "id": "EIP",
+      "label": "Product",
+      "properties": [
+        {
+          "key": "name",
+          "value": "Elastic IP Address"
+        }
+      ]
+    },
+    {
+      "id": "Shared Bandwidth",
+      "label": "Product",
+      "properties": [
+        {
+          "key": "name",
+          "value": "Shared Bandwidth"
+        }
+      ]
+    },
+    {
+      "id": "ENI",
+      "label": "Resource",
+      "properties": [
+        {
+          "key": "name",
+          "value": "Elastic Network Interface"
+        }
+      ]
+    },
+    {
+      "id": "Security Group",
+      "label": "Resource",
+      "properties": [
+        {
+          "key": "name",
+          "value": "Security Group"
+        }
+      ]
+    },
+    {
+      "id": "sg-web-prod",
+      "label": "SecurityGroup",
+      "properties": [
+        {
+          "key": "name",
+          "value": "sg-web-prod"
+        },
+        {
+          "key": "purpose",
+          "value": "Web server frontend access"
+        }
+      ]
+    },
+    {
+      "id": "sg-rds-internal",
+      "label": "SecurityGroup",
+      "properties": [
+        {
+          "key": "name",
+          "value": "sg-rds-internal"
+        },
+        {
+          "key": "purpose",
+          "value": "Internal database access only"
+        }
+      ]
+    },
+    {
+      "id": "CEN",
+      "label": "Product",
+      "properties": [
+        {
+          "key": "name",
+          "value": "Cloud Enterprise Network"
+        }
+      ]
+    },
+    {
+      "id": "80",
+      "label": "Port",
+      "properties": [
+        {
+          "key": "protocol",
+          "value": "TCP"
+        }
+      ]
+    },
+    {
+      "id": "443",
+      "label": "Port",
+      "properties": [
+        {
+          "key": "protocol",
+          "value": "TCP"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "label": "Port",
+      "properties": [
+        {
+          "key": "protocol",
+          "value": "TCP"
+        }
+      ]
+    },
+    {
+      "id": "3306",
+      "label": "Port",
+      "properties": [
+        {
+          "key": "protocol",
+          "value": "TCP"
+        }
+      ]
+    },
+    {
+      "id": "203.0.113.1/32",
+      "label": "IPRange",
+      "properties": [
+        {
+          "key": "cidr",
+          "value": "203.0.113.1/32"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "sg-web-prod",
+      "type": "AUTHORIZED_TO_ACCESS_PORT",
+      "target": "sg-rds-internal"
+    },
+    {
+      "source": "vsw-beijing-k",
+      "type": "SUPPORTS_DEPLOYMENT_OF",
+      "target": "ecs.g8a.4xlarge"
+    },
+    {
+      "source": "ENI",
+      "type": "BOUND_TO",
+      "target": "Security Group"
+    },
+    {
+      "source": "sg-rds-internal",
+      "type": "ALLOWS_INBOUND_PORT",
+      "target": "3306"
+    },
+    {
+      "source": "vsw-beijing-g",
+      "type": "RESTRICTS_DEPLOYMENT_OF",
+      "target": "gn7i"
+    },
+    {
+      "source": "vsw-beijing-k",
+      "type": "INTERCONNECTED_WITHIN_VPC",
+      "target": "vsw-beijing-g"
+    },
+    {
+      "source": "vsw-beijing-g",
+      "type": "DEPLOYED_IN",
+      "target": "cn-beijing-g"
+    },
+    {
+      "source": "EIP",
+      "type": "CAN_BIND_TO",
+      "target": "ecs.c7.large"
+    },
+    {
+      "source": "vpc-prod-beijing",
+      "type": "REQUIRES_FOR_CROSS_VPC_CONNECTIVITY",
+      "target": "CEN"
+    },
+    {
+      "source": "EIP",
+      "type": "SCOPED_TO_REGION",
+      "target": "cn-beijing"
+    },
+    {
+      "source": "vpc-prod-beijing",
+      "type": "CONTAINS",
+      "target": "vsw-beijing-k"
+    },
+    {
+      "source": "vpc-prod-beijing",
+      "type": "ISOLATED_FROM",
+      "target": "vpc-dev-beijing"
+    },
+    {
+      "source": "vsw-beijing-k",
+      "type": "DEPLOYED_IN",
+      "target": "cn-beijing-k"
+    },
+    {
+      "source": "sg-web-prod",
+      "type": "ALLOWS_INBOUND_FROM_IP",
+      "target": "203.0.113.1/32"
+    },
+    {
+      "source": "sg-web-prod",
+      "type": "ALLOWS_INBOUND_PORT",
+      "target": "80"
+    },
+    {
+      "source": "vsw-beijing-k",
+      "type": "SUPPORTS_DEPLOYMENT_OF",
+      "target": "RDS"
+    },
+    {
+      "source": "ENI",
+      "type": "CAN_JOIN",
+      "target": "sg-rds-internal"
+    },
+    {
+      "source": "ecs.c7.8xlarge",
+      "type": "HAS_ENI",
+      "target": "ENI"
+    },
+    {
+      "source": "ENI",
+      "type": "CAN_JOIN",
+      "target": "sg-web-prod"
+    },
+    {
+      "source": "EIP",
+      "type": "CAN_BE_ADDED_TO",
+      "target": "Shared Bandwidth"
+    },
+    {
+      "source": "sg-web-prod",
+      "type": "ALLOWS_INBOUND_PORT",
+      "target": "443"
+    },
+    {
+      "source": "sg-web-prod",
+      "type": "ALLOWS_INBOUND_PORT",
+      "target": "22"
+    },
+    {
+      "source": "Shared Bandwidth",
+      "type": "OPTIMIZES_BANDWIDTH_FOR",
+      "target": "ecs.g8a.xlarge"
+    },
+    {
+      "source": "vpc-prod-beijing",
+      "type": "CONTAINS",
+      "target": "vsw-beijing-g"
+    }
+  ]
+}
