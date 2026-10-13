@@ -33,3 +33,6 @@ coverage/
 Thumbs.db
 *.log
 logs/
+
+# Local knowledge-base source documents (not published)
+/mock_data/
